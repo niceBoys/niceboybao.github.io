@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <base href="http://localhost:8384/www/">
+        <title>Hello React!</title>
+        <!-- Dependencies -->
+        <script src="<%= webpackConfig.isProd ? '../node_modules/react/dist/react.min.js' : '../node_modules/react/dist/react.js' %>"></script>
+        <script src="<%= webpackConfig.isProd ? '../node_modules/react-dom/dist/react-dom.min.js' : '../node_modules/react-dom/dist/react-dom.js' %>"></script>
+        <script src="<%= webpackConfig.isProd ? '../node_modules/redux/dist/redux.min.js' : '../node_modules/redux/dist/redux.js' %>"></script>
+        <script src="<%= webpackConfig.isProd ? '../node_modules/react-redux/dist/react-redux.min.js' : '../node_modules/react-redux/dist/react-redux.js' %>"></script>
+        <script src="<%= webpackConfig.isProd ? '../node_modules/babel-polyfill/dist/polyfill.min.js' : '../node_modules/babel-polyfill/dist/polyfill.js' %>"></script>
+
+        <link href="<%= htmlWebpackPlugin.files.chunks.app.css %>" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="<%= webpackConfig.isProd ? '../node_modules/antd/dist/antd.min.css' : '../node_modules/antd/dist/antd.css' %>">
+    </head>
+    <body>
+        <div id="rootElement" class="app-root-element"></div>
+        <!-- Main -->
+        <script src="<%= htmlWebpackPlugin.files.chunks.common.entry %>"></script>
+        <script src="<%= htmlWebpackPlugin.files.chunks.app.entry %>"></script>
+    </body>
+</html>
